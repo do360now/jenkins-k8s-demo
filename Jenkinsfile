@@ -29,31 +29,31 @@ spec:
   containers:
   - name: gcloud
     image: gcr.io/cloud-builders/gcloud
-    volumeMounts:
-    - name: google-cloud-key
-      readOnly: true
-      mountPath: "/var/secrets/google"
-    - name: docker
-      mountPath: "/usr/bin/docker"
-    - name: dockersock
-      mountPath: "/var/run/docker.sock"
+    // volumeMounts:
+    // - name: google-cloud-key
+    //   readOnly: true
+    //   mountPath: "/var/secrets/google"
+    // - name: docker
+    //   mountPath: "/usr/bin/docker"
+    // - name: dockersock
+    //   mountPath: "/var/run/docker.sock"
     command:
     - cat
-    env:
-    - name: GOOGLE_APPLICATION_CREDENTIALS
-      value: /var/secrets/google/key.json
+    // env:
+    // - name: GOOGLE_APPLICATION_CREDENTIALS
+    //   value: /var/secrets/google/key.json
     tty: true
   - name: kubectl
     image: gcr.io/cloud-builders/kubectl
-    volumeMounts:
-    - name: google-cloud-key
-      readOnly: true
-      mountPath: "/var/secrets/google"
+    // volumeMounts:
+    // - name: google-cloud-key
+    //   readOnly: true
+    //   mountPath: "/var/secrets/google"
     command:
     - cat
-    env:
-    - name: GOOGLE_APPLICATION_CREDENTIALS
-      value: /var/secrets/google/key.json
+    // env:
+    // - name: GOOGLE_APPLICATION_CREDENTIALS
+    //   value: /var/secrets/google/key.json
     tty: true
   - name: node
     image: node:lts-alpine
@@ -67,20 +67,20 @@ spec:
     tty: true
   - name: docker
     image: docker:19.03
-    volumeMounts:
-    - name: google-cloud-key
-      readOnly: true
-      mountPath: "/var/secrets/google"
-    - name: docker
-      mountPath: "/usr/bin/docker"
-    - name: dockersock
-      mountPath: "/var/run/docker.sock"
-    command:
-    - cat
-    env:
-    - name: GOOGLE_APPLICATION_CREDENTIALS
-      value: var/secrets/google/key.json
-    tty: true
+    // volumeMounts:
+    // - name: google-cloud-key
+    //   readOnly: true
+    //   mountPath: "/var/secrets/google"
+    // - name: docker
+    //   mountPath: "/usr/bin/docker"
+    // - name: dockersock
+    //   mountPath: "/var/run/docker.sock"
+    // command:
+    // - cat
+    // env:
+    // - name: GOOGLE_APPLICATION_CREDENTIALS
+    //   value: var/secrets/google/key.json
+    // tty: true
 """
     }
   }

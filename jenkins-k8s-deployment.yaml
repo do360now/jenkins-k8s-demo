@@ -17,9 +17,9 @@ spec:
     spec:
       serviceAccountName: default
       containers:
-        - image: jenkins/jenkins
+        - image: jenkins/jenkins:lts
           name: k8s-jenkins-container
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
             - containerPort: 50000
